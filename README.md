@@ -11,6 +11,9 @@
 * wyjaśnialność modeli głębokich
 * reprodukowalność - motywacja, wyzwania
 
+### Projekt:
+W ramach projektu grupowego studenci przygotują treść *artykułu* dotyczącego efektów prac nad reprodukowalnością artykułów oraz tematów poruszanych na laboratoriach. Każdy zespół będzie analizował dwa rozwiązania. Jedno z nich będzie z obszaru medycznego (temat przydzielony przez prowadzącego). Drugi temat wybiorą studenci po wcześniejszej konsultacji z prowadzącym. 
+
 ### Zasady oceniania:
 
 * 28 pkt -- prace domowe (6 prac domowych za 2, 4 bądź 6pkt)
