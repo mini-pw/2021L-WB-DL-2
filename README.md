@@ -1,6 +1,6 @@
 # Warsztaty Badawcze - grupa 2021L-WB-DeepLearning-2
 
-#### Strona dedykowana zajeciom laboratoryjnym i projektowym z przedmiotu Warsztaty Badawcze w semestrze letnim 2021.
+#### Strona dedykowana zajeciom laboratoryjnym i projektowym z przedmiotu Warsztaty Badawcze w semestrze letnim 2021. [@ptomaszewska](https://github.com/ptomaszewska)
 
 ### Zakres tematyczny:
 * wstęp do sieci MLP, CNN, RNN
