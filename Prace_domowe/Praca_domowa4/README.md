@@ -7,6 +7,8 @@ W artykule (https://arxiv.org/abs/1901.07152) wskazano, że najprostsze algorytm
 2. wszystkich wag modelu
 3. wag w określonej warstwie
 
+Miary jakości modeli po zastosowaniu modeli należy uśrednić z kilku uruchomień (podać także odchylenie standardowe).
+
 W ramach pracy domowej należy:
 - przeanalizować wpływ trzech wspomnianych klas modyfikacji na jakość predykcji modelu
 - krótko opisać zjawisko niepewności w sieciach neuronowych i jakie metody się z tym wiążą
