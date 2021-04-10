@@ -3,7 +3,8 @@
 #### Strona dedykowana zajeciom laboratoryjnym i projektowym z przedmiotu Warsztaty Badawcze w semestrze letnim 2021. [@ptomaszewska](https://github.com/ptomaszewska)
 
 ### Zakres tematyczny:
-* wstęp do sieci MLP, CNN, RNN
+* *supervised learning* (architektury MLP, CNN, RNN)
+* *unsupervised learning* (architektura *Autoencoder*)
 * optymalizowanie sieci neuronowych pod kątem czasu obliczeń
 * sieci neuronowe a zmienny rozmiar danych wejściowych
 * *ablation study*
