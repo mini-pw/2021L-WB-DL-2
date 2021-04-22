@@ -13129,6 +13129,15 @@ Korzystając z sieci neuronowej utworzonej przez autorów artykułu naukowego b�
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Niepeweno&#347;ci-pomiarowe-w-sieciach-neuronowych">Niepeweno&#347;ci pomiarowe w sieciach neuronowych<a class="anchor-link" href="#Niepeweno&#347;ci-pomiarowe-w-sieciach-neuronowych">&#182;</a></h2><p>Zjawisko niepeności polega na, jak wskazuje nazwa, na pewnym odchyleniu naszych danych wejściowych, bądź odchylenie wag w naszej sieci neuronowej. Odchylenia mogą pojawić się w sytuacjach pracy na lekko odchylonych danych względem pierwotnch, lub operowania na modelu wyuczonym na lekko zmodyfikowanych danych, obarczonych pewnym błędem względem oryginału.<br>
+Poradzić sobie możemy z takimi problemami za pomocą narzędzi statystycznych oraz niewielkich poprawek na modelu. Zazwyczaj takie odchylenia mają swoje sposoby na poprawę, gdyż zazwyczaj (zazwyczaj!), błędy takie są modelowane za pomocą funkcji liniowych, bądź kwadratowych, które są dość proste w implementacji.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Zaimportujmy-potrzebne-biblioteki">Zaimportujmy potrzebne biblioteki<a class="anchor-link" href="#Zaimportujmy-potrzebne-biblioteki">&#182;</a></h3>
 </div>
 </div>
@@ -15257,149 +15266,21 @@ Dopowiedzieć muszę jeszcze, iż przy implementacji tego "problemu" również p
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Ostatecznie sprawdźmy co sie stanie dla całkowitej losowej zmiany dla wszystkich wag?</p>
+<p>Jeżeli chodzi o przypadek losowej inicjalizacji w obrębie całej sieci neuronowej to byłoby to równoznaczne z zresetowaniem wszystkich wag, zatem nie będę analizować takiego przypadku, gdyż wiadomo, iż zneutralizuje całkowicie nasz model.</p>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[192]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model_10</span> <span class="o">=</span> <span class="n">model</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">model_10</span><span class="o">.</span><span class="n">layers</span><span class="p">)):</span>
-    <span class="n">weights_modified</span> <span class="o">=</span> <span class="n">weights_mod</span><span class="p">(</span><span class="n">model_5</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">get_weights</span><span class="p">(),</span><span class="mf">0.1</span><span class="p">,</span><span class="n">random</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-    <span class="n">model_10</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_weights</span><span class="p">(</span><span class="n">weights_modified</span><span class="p">)</span>
-<span class="n">model_10</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span> <span class="o">=</span> <span class="s1">&#39;adam&#39;</span><span class="p">,</span> <span class="n">loss</span> <span class="o">=</span> <span class="s1">&#39;sparse_categorical_crossentropy&#39;</span><span class="p">,</span><span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
-<span class="n">model_10</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>313/313 [==============================] - 4s 12ms/step - loss: 64.0491 - accuracy: 0.9631
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[192]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[63.81422424316406, 0.9650999903678894]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Dla większej losowości?</p>
+<h2 id="Wnioski">Wnioski<a class="anchor-link" href="#Wnioski">&#182;</a></h2><p>Nasza siec okazała się być dość odporna na perturbacje danych wejściowych, czego możnabyło się spodziewać, gdyż zbiór MNIST nie jest dość wymagającym zbiorem pod względem powłok i różnorodności wartości pikseli, zatem nawet dość zmodyfikowane obrazy okazały się być rozróżnialne przez model.<br>
+W przypadku zmiany wag w pewnych warstwach, to najważniejszymi wagami okazały się te z pierwszej warstwy konwolucyjnej. Dokonanie całkowitej losowej zmiany, bądź resetu, w obrębie tej warstwy znacząco obniżało accuracy naszego modelu (o około 80 punktów procentowych). Jednakże stała zmiana dla wszystkich wag, tudzież przeskalowanie ich przez pewną liczbę. Takie zmiany powodowały pewne "przesunięcie" od optimum, lecz modele nadal operowały z dużą accuacy.<br>
+W przypadku zmiany stałej dla wszystkich warstw, błąd okzywał się jeszcze mniejszy, tudzież dokonanie takiego przesunięcia dla wszystkich warstw nie dokonuje zmian dla modelu, chociaż w tym przypadku zależy to także od funkcji optymalizacyjnej.<br>
+Losowa perturbacja dla każdej osobnej wagi w obrębie całej sieci, wiązałoby się z jej resetem, zatem zneutralizowałoby to naszą sieć.</p>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[193]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model_11</span> <span class="o">=</span> <span class="n">model</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">model_11</span><span class="o">.</span><span class="n">layers</span><span class="p">)):</span>
-    <span class="n">weights_modified</span> <span class="o">=</span> <span class="n">weights_mod</span><span class="p">(</span><span class="n">model_5</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">get_weights</span><span class="p">(),</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">random</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-    <span class="n">model_11</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_weights</span><span class="p">(</span><span class="n">weights_modified</span><span class="p">)</span>
-<span class="n">model_11</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span> <span class="o">=</span> <span class="s1">&#39;adam&#39;</span><span class="p">,</span> <span class="n">loss</span> <span class="o">=</span> <span class="s1">&#39;sparse_categorical_crossentropy&#39;</span><span class="p">,</span><span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
-<span class="n">model_11</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>313/313 [==============================] - 4s 13ms/step - loss: 64.0491 - accuracy: 0.9631
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[193]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[63.81422424316406, 0.9650999903678894]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[208]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_weights</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[208]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>23.535177</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
     </div>
   </div>
