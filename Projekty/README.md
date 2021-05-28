@@ -6,3 +6,6 @@ Studenci przeanalizują zagadnienie w oparciu o dwa artykuły naukowe:
 2. tematyka medyczna (artykuł wskazany przez prowadzącego)
 
 Projekt realizowany jest w zespołach 3 os.
+
+
+Efekt pracy studentów jest w książce: https://mini-pw.github.io/2021L-WB-Book/
