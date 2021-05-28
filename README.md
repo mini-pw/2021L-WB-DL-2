@@ -5,11 +5,12 @@
 ### Zakres tematyczny:
 * *supervised learning* (architektury MLP, CNN, RNN)
 * *unsupervised learning* (architektura *Autoencoder*)
-* optymalizowanie sieci neuronowych pod kątem czasu obliczeń
+* optymalizowanie sieci neuronowych pod kątem czasu obliczeń (gość z dużej firmy technologicznej)
 * sieci neuronowe a zmienny rozmiar danych wejściowych
 * *ablation study*
 * analiza wrażliwości
 * wyjaśnialność modeli głębokich
+* uczenie wielozadaniowe
 * reprodukowalność - motywacja, wyzwania
 
 ### Projekt:
@@ -17,10 +18,10 @@ W ramach projektu grupowego studenci przygotują treść *artykułu* dotycząceg
 
 ### Zasady oceniania:
 
-* 28 pkt -- prace domowe (6 prac domowych za 2, 4 bądź 6pkt)
-* 11 pkt -- projekt:
-  * 5 pkt -- idea reprodukowalności + wysokopoziomowe zrozumienie artykułu (kamień milowy 1.)
-  * 6 pkt -- efekty prac nad reprodukowalnością (kamień milowy 2.)
+* 26 pkt -- prace domowe 
+* 13 pkt -- projekt:
+  * 6 pkt -- idea reprodukowalności + wysokopoziomowe zrozumienie artykułu (kamień milowy 1.)
+  * 7 pkt -- efekty prac nad reprodukowalnością (kamień milowy 2.)
 * 1 pkt -- recenzja 
 
 #### Materiały:
